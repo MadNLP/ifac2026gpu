@@ -219,14 +219,13 @@ a.software-card:hover {
 /* Organizer */
 .organizer {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 1.5rem;
   align-items: start;
 }
 .organizer-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
+  width: 200px;
+  height: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
   display: block;
@@ -241,7 +240,7 @@ a.software-card:hover {
 .organizer-body p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) {
   .organizer { grid-template-columns: 1fr; }
-  .organizer-photo { width: 160px; height: 160px; }
+  .organizer-photo { width: 180px; }
 }
 
 /* Papers list */
