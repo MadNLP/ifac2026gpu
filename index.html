@@ -135,13 +135,24 @@
       </ul>
 
       <h3>Part 2 — Hands-on tutorials</h3>
+
+      <p><strong>GPU computing in the Julia language.</strong> Implementing GPU code from the basics:</p>
       <ul>
-        <li>Setting up the Julia environment with <a href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">ExaModels.jl</a> and <a href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">MadNLP.jl</a>.</li>
-        <li>GPU basics relevant to optimization workloads.</li>
-        <li>Formulating a nonlinear MPC problem with state and input constraints in <a href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">ExaModels.jl</a>.</li>
-        <li>Accessing sparse Jacobian and Hessian structures.</li>
-        <li>Solving with <a href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">MadNLP.jl</a> on GPU, exploring solver options and configurations.</li>
-        <li>Extensions to related dynamic optimization problems (e.g., parameter estimation).</li>
+        <li>Array programming on the GPU with <a href="https://github.com/JuliaGPU/CUDA.jl" target="_blank" rel="noopener">CUDA.jl</a>.</li>
+        <li>Kernel programming with <a href="https://github.com/JuliaGPU/KernelAbstractions.jl" target="_blank" rel="noopener">KernelAbstractions.jl</a>.</li>
+      </ul>
+
+      <p><strong>Formulating and solving nonlinear optimal control problems on GPUs.</strong> Using the MadSuite tooling:</p>
+      <ul>
+        <li>Formulating problems with <a href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">ExaModels.jl</a>.</li>
+        <li>Solving them with <a href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">MadNLP.jl</a>.</li>
+        <li>A first nonlinear optimal control example, end to end.</li>
+      </ul>
+
+      <p><strong>Extensions: parameter estimation and energy systems.</strong> More involved examples that build on the same modeling and solver stack:</p>
+      <ul>
+        <li>Parameter estimation for dynamic systems.</li>
+        <li>Energy-system applications (e.g., AC optimal power flow).</li>
       </ul>
 
       <p>
