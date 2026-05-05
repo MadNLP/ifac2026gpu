@@ -234,13 +234,29 @@
       <h2>Software &amp; Papers</h2>
 
       <h3>Software stack</h3>
+      <p>The workshop is built on the following foundational stack:</p>
+      <div class="cards">
+        <a class="card software-card" href="https://julialang.org/" target="_blank" rel="noopener">
+          <h3>Julia</h3>
+          <p class="affil">High-performance scientific computing language</p>
+          <p>The base language for all examples and packages used in the workshop.</p>
+          <p class="card-link">julialang.org &rarr;</p>
+        </a>
+        <a class="card software-card" href="https://github.com/JuliaGPU/CUDA.jl" target="_blank" rel="noopener">
+          <h3>CUDA.jl</h3>
+          <p class="affil">CUDA programming for Julia</p>
+          <p>Provides Julia bindings to NVIDIA CUDA, including GPU arrays, kernel programming, and core numerical libraries.</p>
+          <p class="card-link">github.com/JuliaGPU/CUDA.jl &rarr;</p>
+        </a>
+        <a class="card software-card" href="https://github.com/JuliaGPU/KernelAbstractions.jl" target="_blank" rel="noopener">
+          <h3>KernelAbstractions.jl</h3>
+          <p class="affil">Vendor-agnostic GPU kernel programming</p>
+          <p>Lets the same kernel run across CUDA, ROCm, oneAPI, and Metal back ends, used throughout the MadSuite tooling.</p>
+          <p class="card-link">github.com/JuliaGPU/KernelAbstractions.jl &rarr;</p>
+        </a>
+      </div>
+
       <p>
-        The workshop is built on the
-        <a href="https://julialang.org/" target="_blank" rel="noopener">Julia programming language</a>
-        and uses the GPU stack provided by
-        <a href="https://github.com/JuliaGPU/CUDA.jl" target="_blank" rel="noopener">CUDA.jl</a>
-        and
-        <a href="https://github.com/JuliaGPU/KernelAbstractions.jl" target="_blank" rel="noopener">KernelAbstractions.jl</a>.
         On top of this stack, the hands-on portion uses two packages from
         <a href="https://madsuite.org" target="_blank" rel="noopener">MadSuite</a>,
         an open-source optimization software suite for GPUs developed and maintained by the organizer:
