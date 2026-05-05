@@ -306,7 +306,7 @@ a.software-card:hover {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 0.5rem 1.25rem;
-  margin: 1.75rem 0 0;
+  margin: 0 0 1.75rem;
 }
 .logistics dt {
   font-weight: 600;
