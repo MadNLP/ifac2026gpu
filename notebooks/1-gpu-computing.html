@@ -7931,19 +7931,14 @@ speedup, we use the sibling macro <code>@belapsed</code>. It returns the minimum
 seconds.</p>
 <p>A short ✏️ <strong>exercise</strong> appears later on, as a blank cell marked
 "your turn".</p>
-<h2 id="Why-GPUs?">Why GPUs?<a class="anchor-link" href="#Why-GPUs?">¶</a></h2><p>The lecture parts of this workshop covered how GPUs accelerate
-optimization and optimal control problems. The
-hands-on parts are where you see it for yourself: this tutorial covers the
-programming model, and the one that follows applies it to optimal control
-and parameter estimation.</p>
-<p><strong>Using a GPU does not always mean writing GPU kernels.</strong> Much of what CUDA.jl
+<h2 id="Arrays-on-the-GPU">Arrays on the GPU<a class="anchor-link" href="#Arrays-on-the-GPU">¶</a></h2><p><strong>Using a GPU does not always mean writing GPU kernels.</strong> Much of what CUDA.jl
 offers is available from a high level. Standard array operations
 (arithmetic, broadcasting, <code>map</code>, reductions, linear algebra) are already
 extended to GPU arrays, so most GPU code in this workshop looks like
 ordinary Julia array code. We write one kernel by hand near the end, for the
 one pattern broadcasting does not cover, not because you will usually need
 to.</p>
-<h2 id="Arrays-on-the-GPU">Arrays on the GPU<a class="anchor-link" href="#Arrays-on-the-GPU">¶</a></h2><p>Julia's GPU support is organized under <a href="https://juliagpu.org/">JuliaGPU</a>.
+<p>Julia's GPU support is organized under <a href="https://juliagpu.org/">JuliaGPU</a>.
 We use NVIDIA GPUs here, programmed through
 <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>:</p>
 </div>
