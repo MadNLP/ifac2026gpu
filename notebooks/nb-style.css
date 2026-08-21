@@ -12,4 +12,5 @@ body.jp-Notebook { max-width: 54rem; margin: 0 auto; padding: 1.5rem 1rem;
 :root { --jp-content-link-color: #750014; }
 .jp-RenderedHTMLCommon a,
 .jp-RenderedHTMLCommon a:link,
-.jp-RenderedHTMLCommon a:visited { color: #750014; }
+.jp-RenderedHTMLCommon a:visited { color: #750014;
+                                   text-decoration: underline; }
