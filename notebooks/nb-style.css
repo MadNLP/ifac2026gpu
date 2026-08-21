@@ -7,4 +7,9 @@ body.jp-Notebook { max-width: 54rem; margin: 0 auto; padding: 1.5rem 1rem;
 .jp-RenderedHTMLCommon h1 { font-size: 1.6rem; line-height: 1.25; }
 .jp-RenderedHTMLCommon h2 { font-size: 1.15rem; margin-top: 2rem; }
 .jp-RenderedHTMLCommon h3 { font-size: 1.05rem; }
-.jp-RenderedHTMLCommon a { color: #750014; }
+/* nbconvert colors links through this variable, and with a:link /
+   a:visited rules a bare descendant selector cannot outrank. */
+:root { --jp-content-link-color: #750014; }
+.jp-RenderedHTMLCommon a,
+.jp-RenderedHTMLCommon a:link,
+.jp-RenderedHTMLCommon a:visited { color: #750014; }
