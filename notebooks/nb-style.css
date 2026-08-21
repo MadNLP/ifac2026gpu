@@ -4,7 +4,7 @@ body.jp-Notebook { max-width: 54rem; margin: 0 auto; padding: 1.5rem 1rem;
                          line-height: 1.55; font-size: 1rem; }
 .jp-RenderedHTMLCommon h1, .jp-RenderedHTMLCommon h2,
 .jp-RenderedHTMLCommon h3, .jp-RenderedHTMLCommon h4 { font-weight: bold; }
-.jp-RenderedHTMLCommon h1 { font-size: 1.6rem; line-height: 1.25; color: #a31f34; }
-.jp-RenderedHTMLCommon h2 { font-size: 1.15rem; margin-top: 2rem; color: #a31f34; }
+.jp-RenderedHTMLCommon h1 { font-size: 1.6rem; line-height: 1.25; color: #750014; }
+.jp-RenderedHTMLCommon h2 { font-size: 1.15rem; margin-top: 2rem; color: #750014; }
 .jp-RenderedHTMLCommon h3 { font-size: 1.05rem; }
-.jp-RenderedHTMLCommon a { color: #a31f34; }
+.jp-RenderedHTMLCommon a { color: #750014; }
