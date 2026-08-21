@@ -7,6 +7,8 @@ body.jp-Notebook { max-width: 54rem; margin: 0 auto; padding: 1.5rem 1rem;
 .jp-RenderedHTMLCommon h1 { font-size: 1.6rem; line-height: 1.25; }
 .jp-RenderedHTMLCommon h2 { font-size: 1.15rem; margin-top: 2rem; }
 .jp-RenderedHTMLCommon h3 { font-size: 1.05rem; }
+/* Wide code and output lines scroll horizontally instead of wrapping. */
+.jp-Notebook pre { white-space: pre; overflow-x: auto; }
 /* nbconvert colors links through this variable, and with a:link /
    a:visited rules a bare descendant selector cannot outrank. */
 :root { --jp-content-link-color: #750014; }
