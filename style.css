@@ -33,3 +33,6 @@ table.program td {
 table.program td:first-child { white-space: nowrap; }
 
 ul.papers li { margin: 0.7rem 0; }
+
+ul.materials { font-size: 1.05rem; }
+ul.materials li { margin: 0.5rem 0; }
