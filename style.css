@@ -1,5 +1,4 @@
-/* Minimal single-column style, matching the workshop materials site
-   (madsuite.org/ifac2026-workshop). */
+/* Same style as the workshop materials site (madsuite.org/ifac2026-workshop). */
 
 body {
   max-width: 46rem;
@@ -18,51 +17,19 @@ li { margin: 0.4rem 0; }
 
 a { color: #0b5394; }
 
-.meta, .muted, .muted-note { color: #555; }
+.meta, .muted-note { color: #555; }
 .muted-note { font-size: 0.9rem; }
 
-/* Schedule table */
 table.program {
   border-collapse: collapse;
-  width: 100%;
   font-size: 0.95rem;
 }
-table.program th, table.program td {
+table.program td {
   text-align: left;
-  padding: 0.35rem 0.75rem 0.35rem 0;
+  padding: 0.3rem 0.9rem 0.3rem 0;
   border-bottom: 1px solid #ddd;
   vertical-align: top;
 }
-table.program th { border-bottom: 2px solid #bbb; }
 table.program td:first-child { white-space: nowrap; }
 
-/* Logistics definition list */
-dl.logistics dt { font-weight: bold; margin-top: 0.8rem; }
-dl.logistics dd { margin: 0.15rem 0 0 0; }
-
-/* Organizer */
-.organizer {
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-}
-.organizer-photo {
-  width: 120px;
-  height: auto;
-  flex-shrink: 0;
-}
-.organizer p { margin-top: 0; }
-
-@media (max-width: 480px) {
-  .organizer { display: block; }
-  .organizer-photo { margin-bottom: 0.75rem; }
-}
-
 ul.papers li { margin: 0.7rem 0; }
-
-footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ddd;
-  font-size: 0.9rem;
-}

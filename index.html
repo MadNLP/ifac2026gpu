@@ -10,42 +10,33 @@
 <body>
 
   <h1>GPU Acceleration in Optimization and Optimal Control</h1>
-  <p class="meta">Pre-congress workshop, <a href="https://ifac2026.org">23rd IFAC World Congress</a><br>
-    Sunday, 23 August 2026, 08:30&ndash;12:00 KST &middot; BEXCO, Busan, Republic of Korea</p>
+  <p class="meta">Pre-congress workshop at the <a href="https://ifac2026.org">23rd IFAC World Congress</a>
+    &mdash; BEXCO, Busan, Sunday 23 August 2026, 08:30&ndash;12:00 KST.<br>
+    <a href="https://github.com/madsuite-org/ifac2026-workshop/releases/latest/download/ifac2026-gpu-acceleration-slides.pdf">Lecture slides (PDF)</a> &middot;
+    <a href="https://madsuite.org/ifac2026-workshop/">Hands-on notebooks</a> &middot;
+    <a href="https://github.com/madsuite-org/ifac2026-workshop">Source repository</a></p>
 
-  <h2 id="materials">Materials</h2>
-  <ul>
-    <li><a href="https://github.com/madsuite-org/ifac2026-workshop/releases/latest/download/ifac2026-gpu-acceleration-slides.pdf">Lecture slides</a> (PDF)</li>
-    <li><a href="https://madsuite.org/ifac2026-workshop/">Hands-on notebooks</a>, executed on the workshop's GPU servers, with worked solutions published the morning after the workshop</li>
-    <li><a href="https://github.com/madsuite-org/ifac2026-workshop">Source repository</a> for the slides and notebooks</li>
-  </ul>
-  <p>Access to the shared GPU environment for the live exercises is given in the room.</p>
-
-  <h2 id="about">About</h2>
-  <p>
-    Discretizing an optimal control problem produces a nonlinear program that is
-    large, sparse, and repetitive in structure, and recent advances in
+  <p>Discretizing an optimal control problem produces a nonlinear program that
+    is large, sparse, and repetitive in structure, and recent advances in
     interior-point methods and sparse linear algebra make such problems
-    solvable on GPUs.
-    The workshop covers the theory behind these advances and the open-source
-    software that implements them, and in the hands-on session participants
-    formulate and solve optimal control problems on GPUs themselves.
-  </p>
-  <p>
-    About two hours of lectures are followed by about 1.5 hours of hands-on
-    tutorials with interactive notebooks. Participants need basic background
-    in optimization and control and some experience with a high-level
-    scientific computing language; no GPU programming experience is required.
-    A laptop with a web browser is enough, since the exercises run on a hosted
-    GPU environment.
-  </p>
+    solvable on GPUs. The lecture covers this in three parts: nonlinear
+    optimization, optimal control as a structured nonlinear program, and GPU
+    acceleration. In the hands-on session participants work through two
+    notebooks &mdash; GPU computing in Julia, then optimal control and
+    parameter estimation on GPUs &mdash; built on
+    <a href="https://julialang.org/">Julia</a>,
+    <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>,
+    <a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a>, and
+    <a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a>.</p>
+
+  <p>Basic background in optimization and control and some experience with a
+    high-level scientific computing language are enough; no GPU programming
+    experience is required. The exercises run on a hosted GPU environment
+    (access given in the room), so bring a laptop with a web browser.</p>
 
   <h2 id="schedule">Schedule</h2>
   <p class="muted-note">All times KST (UTC+9).</p>
   <table class="program">
-    <thead>
-      <tr><th>Time</th><th>Session</th></tr>
-    </thead>
     <tbody>
       <tr><td>08:30&ndash;08:35</td><td>Logistics</td></tr>
       <tr><td>08:35&ndash;09:25</td><td>Lecture: nonlinear optimization; optimal control as a structured NLP</td></tr>
@@ -58,54 +49,25 @@
     </tbody>
   </table>
 
-  <h2 id="logistics">Logistics</h2>
-  <dl class="logistics">
-    <dt>Registration</dt>
-    <dd>Through the <a href="https://ifac2026.org">IFAC 2026 World Congress</a>
-      <a href="https://ifac2026.org/fairOnline.do?selAction=single_page&amp;SYSTEM_IDX=214&amp;FAIRMENU_IDX=21710&amp;hl=ENG">pre-congress workshops program</a>,
-      available to congress registrants (Full, Student, or Retiree).</dd>
-    <dt>Code of conduct</dt>
-    <dd>Participants are expected to follow the
-      <a href="https://www.ifac-control.org/about/code-of-ethics-and-conduct">IFAC Code of Ethics and Conduct</a>.</dd>
-    <dt>Contact</dt>
-    <dd><a href="mailto:sushin@mit.edu">sushin@mit.edu</a></dd>
-  </dl>
+  <h2 id="registration">Registration and contact</h2>
+  <p>Registration is through the IFAC 2026
+    <a href="https://ifac2026.org/fairOnline.do?selAction=single_page&amp;SYSTEM_IDX=214&amp;FAIRMENU_IDX=21710&amp;hl=ENG">pre-congress workshops program</a>,
+    available to congress registrants. Participants are expected to follow the
+    <a href="https://www.ifac-control.org/about/code-of-ethics-and-conduct">IFAC Code of Ethics and Conduct</a>.
+    Questions: <a href="mailto:sushin@mit.edu">sushin@mit.edu</a>.</p>
 
   <h2 id="organizer">Organizer</h2>
-  <article class="organizer">
-    <img class="organizer-photo" src="img/sungho_shin.jpg" alt="Sungho Shin" />
-    <div>
-      <p><a href="https://cheme.mit.edu/profile/sungho-shin/"><strong>Sungho Shin</strong></a><br>
-        Texaco&ndash;Mangelsdorf Career Development Chair Assistant Professor<br>
-        Department of Chemical Engineering, Massachusetts Institute of Technology</p>
-      <p>Sungho Shin works on GPU-accelerated nonlinear optimization for
-        large-scale optimal control, and leads the development of
-        <a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a> and
-        <a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a>.</p>
-      <p><a href="https://shin.mit.edu">shin.mit.edu</a> &middot;
-        <a href="https://scholar.google.com/citations?user=_KaTyEwAAAAJ">Google Scholar</a> &middot;
-        <a href="https://github.com/sshin23">GitHub</a></p>
-    </div>
-  </article>
+  <p><a href="https://cheme.mit.edu/profile/sungho-shin/">Sungho Shin</a>,
+    Department of Chemical Engineering, Massachusetts Institute of Technology.
+    He works on GPU-accelerated nonlinear optimization for large-scale optimal
+    control, and leads the development of MadNLP.jl and ExaModels.jl.<br>
+    <a href="https://shin.mit.edu">shin.mit.edu</a> &middot;
+    <a href="https://scholar.google.com/citations?user=_KaTyEwAAAAJ">Google Scholar</a> &middot;
+    <a href="https://github.com/sshin23">GitHub</a></p>
 
-  <h2 id="software">Software and papers</h2>
-  <p>
-    The workshop is built on <a href="https://julialang.org/">Julia</a>,
-    <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>, and
-    <a href="https://github.com/JuliaGPU/KernelAbstractions.jl">KernelAbstractions.jl</a>,
-    and the hands-on session uses two packages from
-    <a href="https://madsuite.org">MadSuite</a>:
-    <a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a> for
-    algebraic modeling and automatic differentiation on GPUs, and
-    <a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a>, a
-    GPU-accelerated interior-point solver.
-    A similar tutorial, focused on power systems, was offered at
-    <a href="https://madsuite.org/powertech2025/dev/2-batched-powerflow/">PowerTech 2025</a>.
-  </p>
-  <p>
-    The lectures draw on the following papers; a complete list is on the
-    <a href="https://shin.mit.edu/publications">organizer's publications page</a>.
-  </p>
+  <h2 id="papers">Papers</h2>
+  <p>The lectures draw on the following papers; a complete list is on the
+    <a href="https://shin.mit.edu/publications">organizer's publications page</a>.</p>
   <ul class="papers">
     <li>
       S. Shin, M. Schanen, F. Pacaud, A. Montoison, M. Anitescu.
@@ -160,12 +122,6 @@
       [<a href="https://arxiv.org/abs/2209.13049">arXiv:2209.13049</a>]
     </li>
   </ul>
-
-  <footer>
-    <p class="muted">GPU Acceleration in Optimization and Optimal Control &middot;
-      Pre-congress workshop, <a href="https://ifac2026.org">23rd IFAC World Congress</a> &middot;
-      Busan, Republic of Korea</p>
-  </footer>
 
 </body>
 </html>
