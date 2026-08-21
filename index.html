@@ -8,362 +8,164 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <img class="hero-logo" src="img/ifac2026_logo.png" alt="IFAC 2026 Busan logo" />
-      <p class="eyebrow">Pre-Congress Workshop · IFAC 2026 World Congress</p>
-      <h1>GPU Acceleration in Optimization and Optimal Control</h1>
-      <p class="tagline">A half-day workshop on GPU-accelerated nonlinear optimization and optimal control.</p>
-      <p class="meta">Sunday, 23 August 2026 · BEXCO, Busan, Republic of Korea</p>
+
+  <h1>GPU Acceleration in Optimization and Optimal Control</h1>
+  <p class="meta">Pre-congress workshop, <a href="https://ifac2026.org">23rd IFAC World Congress</a><br>
+    Sunday, 23 August 2026, 08:30&ndash;12:00 KST &middot; BEXCO, Busan, Republic of Korea</p>
+
+  <h2 id="materials">Materials</h2>
+  <ul>
+    <li><a href="https://github.com/madsuite-org/ifac2026-workshop/releases/latest/download/ifac2026-gpu-acceleration-slides.pdf">Lecture slides</a> (PDF)</li>
+    <li><a href="https://madsuite.org/ifac2026-workshop/">Hands-on notebooks</a>, executed on the workshop's GPU servers, with worked solutions published the morning after the workshop</li>
+    <li><a href="https://github.com/madsuite-org/ifac2026-workshop">Source repository</a> for the slides and notebooks</li>
+  </ul>
+  <p>Access to the shared GPU environment for the live exercises is given in the room.</p>
+
+  <h2 id="about">About</h2>
+  <p>
+    Discretizing an optimal control problem produces a nonlinear program that is
+    large, sparse, and repetitive in structure, and recent advances in
+    interior-point methods and sparse linear algebra make such problems
+    solvable on GPUs.
+    The workshop covers the theory behind these advances and the open-source
+    software that implements them, and in the hands-on session participants
+    formulate and solve optimal control problems on GPUs themselves.
+  </p>
+  <p>
+    About two hours of lectures are followed by about 1.5 hours of hands-on
+    tutorials with interactive notebooks. Participants need basic background
+    in optimization and control and some experience with a high-level
+    scientific computing language; no GPU programming experience is required.
+    A laptop with a web browser is enough, since the exercises run on a hosted
+    GPU environment.
+  </p>
+
+  <h2 id="schedule">Schedule</h2>
+  <p class="muted-note">All times KST (UTC+9).</p>
+  <table class="program">
+    <thead>
+      <tr><th>Time</th><th>Session</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>08:30&ndash;08:35</td><td>Logistics</td></tr>
+      <tr><td>08:35&ndash;09:25</td><td>Lecture: nonlinear optimization; optimal control as a structured NLP</td></tr>
+      <tr><td>09:25&ndash;09:30</td><td>Short break</td></tr>
+      <tr><td>09:30&ndash;10:20</td><td>Lecture: GPU acceleration</td></tr>
+      <tr><td>10:20&ndash;10:40</td><td>Coffee break</td></tr>
+      <tr><td>10:40&ndash;11:15</td><td>Hands-on: GPU computing in Julia</td></tr>
+      <tr><td>11:15&ndash;11:55</td><td>Hands-on: optimal control and parameter estimation on GPUs</td></tr>
+      <tr><td>11:55&ndash;12:00</td><td>Closing</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="logistics">Logistics</h2>
+  <dl class="logistics">
+    <dt>Registration</dt>
+    <dd>Through the <a href="https://ifac2026.org">IFAC 2026 World Congress</a>
+      <a href="https://ifac2026.org/fairOnline.do?selAction=single_page&amp;SYSTEM_IDX=214&amp;FAIRMENU_IDX=21710&amp;hl=ENG">pre-congress workshops program</a>,
+      available to congress registrants (Full, Student, or Retiree).</dd>
+    <dt>Code of conduct</dt>
+    <dd>Participants are expected to follow the
+      <a href="https://www.ifac-control.org/about/code-of-ethics-and-conduct">IFAC Code of Ethics and Conduct</a>.</dd>
+    <dt>Contact</dt>
+    <dd><a href="mailto:sushin@mit.edu">sushin@mit.edu</a></dd>
+  </dl>
+
+  <h2 id="organizer">Organizer</h2>
+  <article class="organizer">
+    <img class="organizer-photo" src="img/sungho_shin.jpg" alt="Sungho Shin" />
+    <div>
+      <p><a href="https://cheme.mit.edu/profile/sungho-shin/"><strong>Sungho Shin</strong></a><br>
+        Texaco&ndash;Mangelsdorf Career Development Chair Assistant Professor<br>
+        Department of Chemical Engineering, Massachusetts Institute of Technology</p>
+      <p>Sungho Shin works on GPU-accelerated nonlinear optimization for
+        large-scale optimal control, and leads the development of
+        <a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a> and
+        <a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a>.</p>
+      <p><a href="https://shin.mit.edu">shin.mit.edu</a> &middot;
+        <a href="https://scholar.google.com/citations?user=_KaTyEwAAAAJ">Google Scholar</a> &middot;
+        <a href="https://github.com/sshin23">GitHub</a></p>
     </div>
-  </header>
+  </article>
 
-  <nav class="nav">
-    <div class="container">
-      <a href="#about">About</a>
-      <a href="#organizer">Organizer</a>
-      <a href="#outline">Topics &amp; audience</a>
-      <a href="#schedule">Schedule &amp; logistics</a>
-      <a href="#software">Software &amp; papers</a>
-    </div>
-  </nav>
-
-  <main class="container">
-
-    <section id="about">
-      <h2>About the Workshop</h2>
-      <p>
-        Optimal control is a fundamental problem in control theory and systems
-        engineering, with applications across process control, autonomous systems, and energy systems. As these applications grow in complexity, the
-        underlying optimization problems become increasingly large-scale and
-        computationally demanding, and traditional CPU-based solvers often
-        struggle to meet real-time requirements.
-      </p>
-      <p>
-        While GPUs are best known today as the workhorse of large-scale AI
-        model training, the same hardware is highly effective for the
-        numerical computations at the heart of control &mdash; and its usefulness
-        extends well beyond training neural-network policies. Modern GPUs
-        deliver an order of magnitude more arithmetic throughput and memory
-        bandwidth than CPUs, and recent advances now make it possible to
-        bring this performance to bear on the structured nonlinear programs
-        that arise in optimal control. By exploiting the repeated structure
-        induced by time-discretized dynamics, GPU-accelerated interior-point
-        methods can solve problems faster, scale to far larger horizons and
-        state dimensions than CPU-based solvers, and open the door to
-        real-time control of systems that were previously out of reach. This
-        workshop bridges the gap between these algorithmic advances and the
-        practitioner, providing both the theoretical understanding and the
-        hands-on skills to formulate and solve large-scale problems
-        efficiently on modern GPU architectures.
-      </p>
-      <p class="callout">
-        <strong>Format:</strong> Half-day (3.5 hours, including a coffee break).
-        About 2 hours of lectures on theoretical foundations and algorithms,
-        followed by about 1.5 hours of hands-on tutorials with interactive
-        notebooks.
-      </p>
-
-      <figure class="topic-grid" aria-label="Application domains for GPU-accelerated optimal control">
-        <div class="topic"><img src="img/topic_gpu.jpg" alt="NVIDIA H100 GPU" /><figcaption>GPU computing</figcaption></div>
-        <div class="topic"><img src="img/topic_process.jpg" alt="Chemical process plant" /><figcaption>Process control</figcaption></div>
-        <div class="topic"><img src="img/topic_autonomous.jpg" alt="Autonomous vehicle" /><figcaption>Autonomous systems</figcaption></div>
-        <div class="topic"><img src="img/topic_grid.jpg" alt="High-voltage transmission lines" /><figcaption>Power grid</figcaption></div>
-      </figure>
-    </section>
-
-    <section id="organizer">
-      <h2>Organizer</h2>
-      <article class="organizer">
-        <img class="organizer-photo" src="img/sungho_shin.jpg" alt="Sungho Shin" />
-        <div class="organizer-body">
-          <h3><a href="https://cheme.mit.edu/profile/sungho-shin/" target="_blank" rel="noopener">Sungho Shin</a></h3>
-          <p class="affil">Texaco&ndash;Mangelsdorf Career Development Chair Assistant Professor<br/>
-            Department of Chemical Engineering, Massachusetts Institute of Technology</p>
-          <p>
-            Sungho Shin works on GPU-accelerated nonlinear optimization for
-            large-scale optimal control. He is the lead developer of
-            <strong><a href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">MadNLP.jl</a></strong>,
-            a GPU-accelerated interior-point solver for nonlinear programming,
-            and
-            <strong><a href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">ExaModels.jl</a></strong>,
-            an algebraic modeling and automatic differentiation tool for GPUs. His group's recent work
-            shows that GPU-resident interior-point methods can deliver
-            order-of-magnitude speedups on optimal-control-style nonlinear
-            programs that arise in process control, autonomous systems, and
-            power-grid operations.
-          </p>
-          <p>
-            The MadNLP and ExaModels team received the
-            <a href="https://www.coin-or.org/coincup/" target="_blank" rel="noopener">COIN-OR Cup</a>
-            (2023) for outstanding contributions to open-source operations
-            research software, and the group's work on AC optimal power flow
-            on GPUs was highlighted on the
-            <a href="https://developer.nvidia.com/blog/nvidia-cudss-library-removes-barriers-to-optimizing-the-us-power-grid/" target="_blank" rel="noopener">NVIDIA technical blog</a>
-            (2024).
-          </p>
-          <p>
-            Web: <a href="https://shin.mit.edu" target="_blank" rel="noopener">shin.mit.edu</a> &nbsp;·&nbsp;
-            Email: <a href="mailto:sushin@mit.edu">sushin@mit.edu</a> &nbsp;·&nbsp;
-            <a href="https://scholar.google.com/citations?user=_KaTyEwAAAAJ" target="_blank" rel="noopener">Google Scholar</a> &nbsp;·&nbsp;
-            <a href="https://github.com/sshin23" target="_blank" rel="noopener">GitHub</a>
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <section id="outline">
-      <h2>Topics &amp; Audience</h2>
-
-      <h3>Part 1 — Foundations &amp; algorithms</h3>
-
-      <p><strong>Introduction to nonlinear optimization and software tools.</strong> Fundamentals, building toward optimization formulations of optimal control:</p>
-      <ul>
-        <li>Constrained nonlinear optimization: optimality conditions and the role of structure.</li>
-        <li>The interior-point method.</li>
-        <li>Nonlinear optimal control via direct transcription.</li>
-        <li>Collocation methods.</li>
-      </ul>
-
-      <p><strong>Recent advances in GPU-accelerated optimization.</strong> What's new and what makes it work on the GPU:</p>
-      <ul>
-        <li>GPU computing: architectures and basic algorithms.</li>
-        <li>Direct sparse linear algebra on GPUs.</li>
-        <li>Condensed-space interior-point methods.</li>
-        <li>Variants and recent extensions.</li>
-      </ul>
-
-      <h3>Part 2 — Hands-on tutorials</h3>
-
-      <p><strong>GPU computing in the Julia language.</strong> Implementing GPU code from the basics:</p>
-      <ul>
-        <li>Array programming &mdash; largely automatic in Julia via broadcasting on GPU-resident arrays.</li>
-        <li>Kernel programming with
-          <a href="https://github.com/JuliaGPU/CUDA.jl" target="_blank" rel="noopener">CUDA.jl</a>
-          and
-          <a href="https://github.com/JuliaGPU/KernelAbstractions.jl" target="_blank" rel="noopener">KernelAbstractions.jl</a>.</li>
-      </ul>
-
-      <p><strong>Formulating and solving nonlinear optimal control problems on GPUs.</strong> Using the MadSuite tooling:</p>
-      <ul>
-        <li>Formulating problems with <a href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">ExaModels.jl</a>.</li>
-        <li>Solving them with <a href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">MadNLP.jl</a>.</li>
-        <li>A first nonlinear optimal control example, end to end.</li>
-      </ul>
-
-      <p><strong>Extensions: parameter estimation and energy systems.</strong> More involved examples that build on the same modeling and solver stack:</p>
-      <ul>
-        <li>Parameter estimation for dynamic systems.</li>
-        <li>Energy-system applications (e.g., AC optimal power flow).</li>
-      </ul>
-
-      <p>
-        Example applications are drawn from nonlinear model predictive control
-        in process control, autonomous systems, and energy systems. A similar tutorial &mdash;
-        focused on power systems &mdash; was offered at
-        <a href="https://madsuite.org/powertech2025/dev/2-batched-powerflow/" target="_blank" rel="noopener">PowerTech 2025</a>;
-        the IFAC 2026 edition retargets the material to optimal control.
-      </p>
-
-      <h3>Audience &amp; outcomes</h3>
-      <p>
-        The workshop targets researchers and practitioners in control,
-        optimization, and systems engineering, as well as graduate students and
-        postdocs working on optimal control and model predictive control. It
-        is also relevant to anyone interested in high-performance computing
-        for control in process control, autonomous systems, and energy systems.
-      </p>
-      <p>By the end of the workshop, participants will be able to:</p>
-      <ul>
-        <li>Formulate large-scale optimal control problems as structured nonlinear programs.</li>
-        <li>Identify and exploit problem structure suitable for GPU acceleration.</li>
-        <li>Use modern modeling tools and GPU-accelerated interior-point solvers on their own problems.</li>
-        <li>Adapt the provided example codes and modeling templates to their own research.</li>
-      </ul>
-
-      <h3>Prerequisites</h3>
-      <ul>
-        <li>Basic background in optimization and control (nonlinear programming, optimal control, MPC).</li>
-        <li>Basic programming experience with a high-level scientific computing language (Julia or Python). Julia is used in the hands-on tutorials; introductory material will be provided.</li>
-        <li>No prior GPU programming experience required &mdash; the workshop focuses on high-level modeling and algorithmic concepts.</li>
-      </ul>
-    </section>
-
-    <section id="schedule">
-      <h2>Schedule &amp; Logistics</h2>
-
-      <dl class="logistics">
-        <dt>Date</dt>
-        <dd>Sunday, 23 August 2026 (pre-congress day, immediately preceding the IFAC World Congress on 24&ndash;28 August 2026).</dd>
-
-        <dt>Venue</dt>
-        <dd>BEXCO, Busan, Republic of Korea &mdash; in conjunction with the
-          <a href="https://ifac2026.org" target="_blank" rel="noopener">23rd IFAC World Congress</a>.</dd>
-
-        <dt>Duration</dt>
-        <dd>Half day (3.5 hours).</dd>
-
-        <dt>Language</dt>
-        <dd>English.</dd>
-
-        <dt>What to bring</dt>
-        <dd>A laptop with a modern web browser. Hands-on examples will be provided as
-          notebooks and can be run on a hosted environment; local installation
-          instructions for Julia, ExaModels.jl, and MadNLP.jl will be made
-          available before the workshop. Access to a GPU is not required &mdash; a
-          shared GPU environment will be provided for the live exercises.</dd>
-
-        <dt>Materials</dt>
-        <dd>Lecture slides, notebooks, and example code will be linked from this page
-          and from a public repository in advance of the workshop.</dd>
-
-        <dt>Registration</dt>
-        <dd>Handled through the
-          <a href="https://ifac2026.org" target="_blank" rel="noopener">IFAC 2026 World Congress</a>
-          system. The workshop is part of the
-          <a href="https://ifac2026.org/fairOnline.do?selAction=single_page&amp;SYSTEM_IDX=214&amp;FAIRMENU_IDX=21710&amp;hl=ENG" target="_blank" rel="noopener">pre-congress workshops program</a>
-          and is available to regular congress registrants (Full, Student, or Retiree).
-          Early-bird deadlines will be announced on this page.</dd>
-
-        <dt>Code of conduct</dt>
-        <dd>Participants are expected to follow the
-          <a href="https://www.ifac-control.org/about/code-of-ethics-and-conduct" target="_blank" rel="noopener">IFAC Code of Ethics and Conduct</a>.</dd>
-
-        <dt>Contact</dt>
-        <dd>For questions about workshop content, contact <a href="mailto:sushin@mit.edu">sushin@mit.edu</a>.</dd>
-      </dl>
-
-      <h3>Tentative Schedule</h3>
-      <p class="muted-note">All times in Korea Standard Time (KST, UTC+9). Workshop runs 08:30&ndash;12:00.</p>
-      <table class="program">
-        <thead>
-          <tr><th>Time (KST)</th><th>Session</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>08:30&ndash;08:35</td><td>Logistics</td></tr>
-          <tr><td>08:35&ndash;09:25</td><td>Introduction to nonlinear optimization and software tools</td></tr>
-          <tr><td>09:25&ndash;09:30</td><td>Short break</td></tr>
-          <tr><td>09:30&ndash;10:20</td><td>Recent advances in GPU-accelerated optimization</td></tr>
-          <tr><td>10:20&ndash;10:40</td><td>Morning coffee break (fixed)</td></tr>
-          <tr><td>10:40&ndash;11:05</td><td>GPU computing in the Julia language <span class="tag">interactive</span></td></tr>
-          <tr><td>11:05&ndash;11:30</td><td>Formulating and solving nonlinear optimal control problems on GPUs <span class="tag">interactive</span></td></tr>
-          <tr><td>11:30&ndash;11:55</td><td>Extensions: parameter estimation and energy systems <span class="tag">interactive</span></td></tr>
-          <tr><td>11:55&ndash;12:00</td><td>Closing</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="software">
-      <h2>Software &amp; Papers</h2>
-
-      <h3>Software stack</h3>
-      <p>The workshop is built on the following foundational stack:</p>
-      <div class="cards">
-        <a class="card software-card" href="https://julialang.org/" target="_blank" rel="noopener">
-          <h3>Julia</h3>
-          <p class="affil">High-performance scientific computing language</p>
-          <p>The base language for all examples and packages used in the workshop.</p>
-          <p class="card-link">julialang.org &rarr;</p>
-        </a>
-        <a class="card software-card" href="https://github.com/JuliaGPU/CUDA.jl" target="_blank" rel="noopener">
-          <h3>CUDA.jl</h3>
-          <p class="affil">CUDA programming for Julia</p>
-          <p>Provides Julia bindings to NVIDIA CUDA, including GPU arrays, kernel programming, and core numerical libraries.</p>
-          <p class="card-link">github.com/JuliaGPU/CUDA.jl &rarr;</p>
-        </a>
-        <a class="card software-card" href="https://github.com/JuliaGPU/KernelAbstractions.jl" target="_blank" rel="noopener">
-          <h3>KernelAbstractions.jl</h3>
-          <p class="affil">Vendor-agnostic GPU kernel programming</p>
-          <p>Lets the same kernel run across CUDA, ROCm, oneAPI, and Metal back ends, used throughout the MadSuite tooling.</p>
-          <p class="card-link">github.com/JuliaGPU/KernelAbstractions.jl &rarr;</p>
-        </a>
-      </div>
-
-      <p>
-        On top of this stack, the hands-on portion uses two packages from
-        <a href="https://madsuite.org" target="_blank" rel="noopener">MadSuite</a>,
-        an open-source optimization software suite for GPUs developed and maintained by the organizer:
-      </p>
-      <div class="cards">
-        <a class="card software-card" href="https://github.com/exanauts/ExaModels.jl" target="_blank" rel="noopener">
-          <h3>ExaModels.jl</h3>
-          <p class="affil">Algebraic modeling &amp; automatic differentiation for GPUs</p>
-          <p>An algebraic modeling and automatic differentiation tool for GPUs, generating sparse Jacobians and Hessians of structured nonlinear programs for efficient GPU execution.</p>
-          <p class="card-link">github.com/exanauts/ExaModels.jl &rarr;</p>
-        </a>
-        <a class="card software-card" href="https://github.com/MadNLP/MadNLP.jl" target="_blank" rel="noopener">
-          <h3>MadNLP.jl</h3>
-          <p class="affil">GPU-accelerated nonlinear programming solver</p>
-          <p>Interior-point method for large-scale nonlinear programs, with GPU-resident KKT solves for structured problems.</p>
-          <p class="card-link">github.com/MadNLP/MadNLP.jl &rarr;</p>
-        </a>
-      </div>
-
-      <h3>Selected papers</h3>
-      <p>
-        The workshop draws on the following papers, which together cover the
-        algorithmic foundations and software design of GPU-accelerated nonlinear
-        optimization. A more complete list is available on the
-        <a href="https://shin.mit.edu/publications" target="_blank" rel="noopener">organizer's publications page</a>.
-      </p>
-      <ul class="papers">
-        <li>
-          S. Shin, F. Pacaud, M. Anitescu.
-          <em>Accelerating optimal power flow with GPUs: SIMD abstraction of nonlinear programs and condensed-space interior-point methods.</em>
-          Electric Power Systems Research, 2024.
-          [<a href="https://arxiv.org/abs/2307.16830" target="_blank" rel="noopener">arXiv:2307.16830</a>]
-          [<a href="https://doi.org/10.1016/j.epsr.2024.110651" target="_blank" rel="noopener">doi</a>]
-        </li>
-        <li>
-          F. Pacaud, S. Shin, A. Montoison, M. Schanen, M. Anitescu.
-          <em>Condensed-space methods for nonlinear programming on GPUs.</em>
-          2024.
-          [<a href="https://arxiv.org/abs/2405.14236" target="_blank" rel="noopener">arXiv:2405.14236</a>]
-        </li>
-        <li>
-          F. Pacaud, M. Schanen, S. Shin, D. A. Maldonado, M. Anitescu.
-          <em>Parallel interior-point solver for block-structured nonlinear programs on SIMD/GPU architectures.</em>
-          Optimization Methods and Software, 2024.
-          [<a href="https://arxiv.org/abs/2301.04869" target="_blank" rel="noopener">arXiv:2301.04869</a>]
-          [<a href="https://doi.org/10.1080/10556788.2024.2329646" target="_blank" rel="noopener">doi</a>]
-        </li>
-        <li>
-          F. Pacaud, S. Shin.
-          <em>GPU-accelerated dynamic nonlinear optimization with ExaModels and MadNLP.</em>
-          63rd IEEE Conference on Decision and Control (CDC), 2024.
-          [<a href="https://arxiv.org/abs/2403.15913" target="_blank" rel="noopener">arXiv:2403.15913</a>]
-          [<a href="https://doi.org/10.1109/CDC56724.2024.10886720" target="_blank" rel="noopener">doi</a>]
-        </li>
-        <li>
-          F. Pacaud, S. Shin, M. Schanen, D. A. Maldonado, M. Anitescu.
-          <em>Accelerating condensed interior-point methods on SIMD/GPU architectures.</em>
-          Journal of Optimization Theory and Applications, 2023.
-          [<a href="https://arxiv.org/abs/2203.11875" target="_blank" rel="noopener">arXiv:2203.11875</a>]
-          [<a href="https://doi.org/10.1007/s10957-022-02129-5" target="_blank" rel="noopener">doi</a>]
-        </li>
-        <li>
-          A. Montoison, F. Pacaud, S. Shin.
-          <em>GPU implementation of second-order linear and nonlinear programming solvers.</em>
-          NeurIPS Workshop on GPU-Accelerated and Scalable Optimization, 2025.
-          [<a href="https://arxiv.org/abs/2508.16094" target="_blank" rel="noopener">arXiv:2508.16094</a>]
-        </li>
-        <li>
-          D. Cole, S. Shin, F. Pacaud, V. M. Zavala, M. Anitescu.
-          <em>Exploiting GPU/SIMD architectures for solving linear-quadratic MPC problems.</em>
-          American Control Conference (ACC), 2023.
-          [<a href="https://arxiv.org/abs/2209.13049" target="_blank" rel="noopener">arXiv:2209.13049</a>]
-        </li>
-      </ul>
-    </section>
-
-  </main>
+  <h2 id="software">Software and papers</h2>
+  <p>
+    The workshop is built on <a href="https://julialang.org/">Julia</a>,
+    <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>, and
+    <a href="https://github.com/JuliaGPU/KernelAbstractions.jl">KernelAbstractions.jl</a>,
+    and the hands-on session uses two packages from
+    <a href="https://madsuite.org">MadSuite</a>:
+    <a href="https://github.com/exanauts/ExaModels.jl">ExaModels.jl</a> for
+    algebraic modeling and automatic differentiation on GPUs, and
+    <a href="https://github.com/MadNLP/MadNLP.jl">MadNLP.jl</a>, a
+    GPU-accelerated interior-point solver.
+    A similar tutorial, focused on power systems, was offered at
+    <a href="https://madsuite.org/powertech2025/dev/2-batched-powerflow/">PowerTech 2025</a>.
+  </p>
+  <p>
+    The lectures draw on the following papers; a complete list is on the
+    <a href="https://shin.mit.edu/publications">organizer's publications page</a>.
+  </p>
+  <ul class="papers">
+    <li>
+      S. Shin, M. Schanen, F. Pacaud, A. Montoison, M. Anitescu.
+      <em>ExaModels.jl: an algebraic modeling system for nonlinear programming on GPUs.</em>
+      2026.
+      [<a href="https://arxiv.org/abs/2608.16265">arXiv:2608.16265</a>]
+    </li>
+    <li>
+      S. Shin, F. Pacaud, M. Anitescu.
+      <em>Accelerating optimal power flow with GPUs: SIMD abstraction of nonlinear programs and condensed-space interior-point methods.</em>
+      Electric Power Systems Research, 2024.
+      [<a href="https://arxiv.org/abs/2307.16830">arXiv:2307.16830</a>]
+      [<a href="https://doi.org/10.1016/j.epsr.2024.110651">doi</a>]
+    </li>
+    <li>
+      F. Pacaud, S. Shin, A. Montoison, M. Schanen, M. Anitescu.
+      <em>Condensed-space methods for nonlinear programming on GPUs.</em>
+      2024.
+      [<a href="https://arxiv.org/abs/2405.14236">arXiv:2405.14236</a>]
+    </li>
+    <li>
+      F. Pacaud, M. Schanen, S. Shin, D. A. Maldonado, M. Anitescu.
+      <em>Parallel interior-point solver for block-structured nonlinear programs on SIMD/GPU architectures.</em>
+      Optimization Methods and Software, 2024.
+      [<a href="https://arxiv.org/abs/2301.04869">arXiv:2301.04869</a>]
+      [<a href="https://doi.org/10.1080/10556788.2024.2329646">doi</a>]
+    </li>
+    <li>
+      F. Pacaud, S. Shin.
+      <em>GPU-accelerated dynamic nonlinear optimization with ExaModels and MadNLP.</em>
+      63rd IEEE Conference on Decision and Control (CDC), 2024.
+      [<a href="https://arxiv.org/abs/2403.15913">arXiv:2403.15913</a>]
+      [<a href="https://doi.org/10.1109/CDC56724.2024.10886720">doi</a>]
+    </li>
+    <li>
+      F. Pacaud, S. Shin, M. Schanen, D. A. Maldonado, M. Anitescu.
+      <em>Accelerating condensed interior-point methods on SIMD/GPU architectures.</em>
+      Journal of Optimization Theory and Applications, 2023.
+      [<a href="https://arxiv.org/abs/2203.11875">arXiv:2203.11875</a>]
+      [<a href="https://doi.org/10.1007/s10957-022-02129-5">doi</a>]
+    </li>
+    <li>
+      A. Montoison, F. Pacaud, S. Shin.
+      <em>GPU implementation of second-order linear and nonlinear programming solvers.</em>
+      NeurIPS Workshop on GPU-Accelerated and Scalable Optimization, 2025.
+      [<a href="https://arxiv.org/abs/2508.16094">arXiv:2508.16094</a>]
+    </li>
+    <li>
+      D. Cole, S. Shin, F. Pacaud, V. M. Zavala, M. Anitescu.
+      <em>Exploiting GPU/SIMD architectures for solving linear-quadratic MPC problems.</em>
+      American Control Conference (ACC), 2023.
+      [<a href="https://arxiv.org/abs/2209.13049">arXiv:2209.13049</a>]
+    </li>
+  </ul>
 
   <footer>
-    <div class="container">
-      <p><strong>GPU Acceleration in Optimization and Optimal Control</strong></p>
-      <p class="muted">Pre-Congress Workshop &middot; <a href="https://ifac2026.org" target="_blank" rel="noopener">23rd IFAC World Congress</a> &middot; Busan, Republic of Korea</p>
-    </div>
+    <p class="muted">GPU Acceleration in Optimization and Optimal Control &middot;
+      Pre-congress workshop, <a href="https://ifac2026.org">23rd IFAC World Congress</a> &middot;
+      Busan, Republic of Korea</p>
   </footer>
+
 </body>
 </html>
