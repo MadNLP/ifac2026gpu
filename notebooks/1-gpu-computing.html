@@ -7865,7 +7865,7 @@ takes a couple of minutes for this reason; it is paid once.</li>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(first_call_s = 0.005664204, second_call_s = 6.066e-6, first_call_slower_by = 934)</pre>
+<pre>(first_call_s = 0.005407312, second_call_s = 5.892e-6, first_call_slower_by = 918)</pre>
 </div>
 </div>
 </div>
@@ -7912,7 +7912,7 @@ excluded, then runs the expression many times and reports the minimum:</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  2.179 ns (0 allocations: 0 bytes)
+<pre>  11.163 ns (0 allocations: 0 bytes)
 </pre>
 </div>
 </div>
@@ -8155,14 +8155,14 @@ array that lives in CPU memory and <strong>uploads</strong> it to the device:</p
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
-  0.7064630205096499
-  1.2174516461339435
-  0.8067211479833851
-  0.03833269712534608
- -1.2825402061317643
- -1.0468598098475466
- -0.15243953817734102
- -0.4471254038191785</pre>
+  0.09536474393523404
+  1.9666541644356506
+  0.37609245655694584
+  1.5056621262875372
+  1.085749145767373
+ -0.19997564359563946
+ -0.7320842787223049
+ -2.481177522771381</pre>
 </div>
 </div>
 </div>
@@ -8200,14 +8200,14 @@ array that lives in CPU memory and <strong>uploads</strong> it to the device:</p
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8-element Vector{Float64}:
-  0.7064630205096499
-  1.2174516461339435
-  0.8067211479833851
-  0.03833269712534608
- -1.2825402061317643
- -1.0468598098475466
- -0.15243953817734102
- -0.4471254038191785</pre>
+  0.09536474393523404
+  1.9666541644356506
+  0.37609245655694584
+  1.5056621262875372
+  1.085749145767373
+ -0.19997564359563946
+ -0.7320842787223049
+ -2.481177522771381</pre>
 </div>
 </div>
 </div>
@@ -8301,14 +8301,14 @@ expression:</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
- 2.6491473889236437
- 2.9382205769963354
- 2.722022521738329
- 2.038323310165175
- 1.0412589156279717
- 1.1341435162802966
- 1.8481501698045435
- 1.567624681250215</pre>
+ 2.095220261582409
+ 2.922666121844938
+ 2.3672888494706656
+ 2.9978795177936486
+ 2.8846529519344326
+ 1.8013545401617352
+ 1.3315786634825684
+ 1.3865552507447</pre>
 </div>
 </div>
 </div>
@@ -8607,7 +8607,7 @@ measures the operation itself and not the global-variable lookup around it.</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(cpu_loop_ms = 0.002333, cpu_broadcast_ms = 0.0023461111111111113)</pre>
+<pre>(cpu_loop_ms = 0.0023505555555555554, cpu_broadcast_ms = 0.0023517777777777777)</pre>
 </div>
 </div>
 </div>
@@ -8656,7 +8656,7 @@ single-element access already waits for the device.</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(gpu_broadcast_ms = 0.02412, gpu_loop_ms = 409.42552)</pre>
+<pre>(gpu_broadcast_ms = 0.022199, gpu_loop_ms = 388.434381)</pre>
 </div>
 </div>
 </div>
@@ -8695,7 +8695,7 @@ same loop on the CPU:</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(gpu_loop_vs_gpu_broadcast = 16975, gpu_loop_vs_cpu_loop = 175493)</pre>
+<pre>(gpu_loop_vs_gpu_broadcast = 17498, gpu_loop_vs_cpu_loop = 165252)</pre>
 </div>
 </div>
 </div>
@@ -8787,14 +8787,14 @@ device, and the function you pass is compiled into a GPU kernel for you:</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
- 1.9981799986952362
- 3.9643770213484975
- 2.3015980212072615
- 1.002938791337807
- 4.289818760689017
- 3.191830922948083
- 1.046475625599442
- 1.399842253480927</pre>
+  1.0181888687716656
+  8.735457204984174
+  1.2828910717580764
+  5.534036877073415
+  3.35770241506916
+  1.0799805160629805
+  2.0718947823047147
+ 13.312483799011854</pre>
 </div>
 </div>
 </div>
@@ -8835,14 +8835,14 @@ and the form to use inside a loop:</p>
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>8-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
- 1.9981799986952362
- 3.9643770213484975
- 2.3015980212072615
- 1.002938791337807
- 4.289818760689017
- 3.191830922948083
- 1.046475625599442
- 1.399842253480927</pre>
+  1.0181888687716656
+  8.735457204984174
+  1.2828910717580764
+  5.534036877073415
+  3.35770241506916
+  1.0799805160629805
+  2.0718947823047147
+ 13.312483799011854</pre>
 </div>
 </div>
 </div>
@@ -8882,7 +8882,7 @@ the two, so the mapped array is never built:</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(19.195061395306272, 57.65724735482837)</pre>
+<pre>(36.392635535036035, 303.57179112253704)</pre>
 </div>
 </div>
 </div>
@@ -8924,7 +8924,7 @@ array you already own.</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(35.45889840924782, 2.9382205769963354, 8, (1.0412589156279717, 2.9382205769963354))</pre>
+<pre>(42.785001337235464, 2.9978795177936486, 8, (1.3315786634825684, 2.9978795177936486))</pre>
 </div>
 </div>
 </div>
@@ -8994,50 +8994,6 @@ do not constrain the step, since <code>Inf</code> is the identity for <code>min<
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%E2%9C%8F%EF%B8%8F-Exercise:-Monte-Carlo-%CF%80">✏️ Exercise: Monte-Carlo π<a class="anchor-link" href="#%E2%9C%8F%EF%B8%8F-Exercise:-Monte-Carlo-%CF%80">¶</a></h3><blockquote>
-<p><strong>Your turn.</strong> Estimate π on the GPU: draw <code>N = 10^6</code> uniform points in
-the unit square with <code>CUDA.rand</code>, and use <code>mapreduce</code> to count how many
-land inside the quarter disk <code>x^2 + y^2 ≤ 1</code>. Four times that fraction
-estimates π. Write it as a single fused reduction, with no temporary
-array of distances or of booleans.</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-julia"><pre><span></span><span class="c"># your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Solution:
-<a href="https://madsuite.org/ifac2026/notebooks/montecarlo-pi-solution.html">montecarlo-pi-solution</a>.</p>
-<hr/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Dense-linear-algebra">Dense linear algebra<a class="anchor-link" href="#Dense-linear-algebra">¶</a></h2><p><code>CuArray</code> plugs into Julia's standard linear algebra, backed by NVIDIA's
 cuBLAS and cuSOLVER libraries, with the same functions under the same
 names:</p>
@@ -9049,7 +9005,7 @@ names:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">LinearAlgebra</span>
@@ -9078,7 +9034,7 @@ names:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">w_gpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A_gpu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v_gpu</span>
@@ -9092,29 +9048,29 @@ names:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>2048-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
-  31.914729116536535
-  49.47557617264027
-   1.2117175698712082
-  88.77352289167007
-  65.6407018661084
- -21.046891866012373
-  72.90899377266231
- -90.71882125847873
-  75.89031956464056
-  79.0061725644785
+ -64.88370268482025
+  22.843138075297993
+ -55.60042164255302
+ -52.670906423581165
+   8.375534701915473
+ -34.0423149407661
+  62.21900772546391
+  13.296348194920718
+  40.39426767545733
+ -47.97813462800943
    ⋮
-  64.44739836260162
-  -0.7295149294333836
- -60.04500938047327
-  -0.33480925356932545
-  23.67775592799319
- -94.69318661792386
- -32.96036011626927
- -19.046999804178867
-  -3.5381580347443986</pre>
+ -45.67855599941788
+  45.38351038680202
+  64.29313855701335
+  67.46315071379313
+   1.9967568135027562
+ -59.06693017553814
+ -31.94832520630457
+  11.288628787339547
+  39.26093096639351</pre>
 </div>
 </div>
 </div>
@@ -9138,7 +9094,7 @@ iteration of an optimization solver, this is the form you want:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">mul!</span><span class="p">(</span><span class="n">w_gpu</span><span class="p">,</span><span class="w"> </span><span class="n">A_gpu</span><span class="p">,</span><span class="w"> </span><span class="n">v_gpu</span><span class="p">);</span>
@@ -9164,7 +9120,7 @@ kind that sits at the core of an interior-point iteration:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">S_gpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A_gpu</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A_gpu</span><span class="o">'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span><span class="p">;</span>
@@ -9189,7 +9145,7 @@ kind that sits at the core of an interior-point iteration:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cholesky</span><span class="p">(</span><span class="n">S_gpu</span><span class="p">);</span>
@@ -9214,7 +9170,7 @@ kind that sits at the core of an interior-point iteration:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">b_gpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CUDA</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
@@ -9230,9 +9186,9 @@ kind that sits at the core of an interior-point iteration:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4.8749364797067515e-14</pre>
+<pre>5.262402628704362e-14</pre>
 </div>
 </div>
 </div>
@@ -9255,7 +9211,7 @@ sides in place:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">x_sol2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">similar</span><span class="p">(</span><span class="n">b_gpu</span><span class="p">)</span>
@@ -9271,9 +9227,9 @@ sides in place:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4.8749364797067515e-14</pre>
+<pre>5.262402628704362e-14</pre>
 </div>
 </div>
 </div>
@@ -9298,7 +9254,7 @@ any other:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">SparseArrays</span>
@@ -9316,29 +9272,29 @@ any other:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>4096×4096 cuSPARSE.CuSparseMatrixCSR{Float64, Int32} with 21000 stored entries:
-⎡⡱⣿⡟⣞⣻⣖⡿⡷⣼⣶⣶⣹⣿⣿⡗⢟⣷⣯⣷⣿⣷⣷⣯⣾⣿⣷⣧⣿⣷⣿⢿⣿⣽⣿⣷⣷⣿⣿⣿⣷⎤
-⎢⢿⣿⣷⣿⣿⡿⣿⣿⣿⣟⣹⢿⡽⡿⣿⣾⣿⣾⣿⣻⡿⣿⣿⣿⣿⣯⣿⣟⢿⣻⣿⣷⣻⣿⣫⡸⣿⣿⣻⡿⎥
-⎢⣿⣿⣿⣿⣷⣿⣿⡿⣿⣿⣯⣿⡿⣿⣽⣿⣾⣿⣿⣿⣿⢯⣿⣿⣿⣻⣿⣿⣧⣿⡿⣻⣾⢻⣿⣿⣿⣿⣿⣻⎥
-⎢⡿⡿⢿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣯⢿⣿⣿⣿⡿⣿⣿⣿⣯⣿⣷⣿⣿⣿⣿⣿⣽⣿⣽⣟⣽⣿⢷⣿⣻⣾⡷⎥
-⎢⡾⣿⣿⣷⣿⣹⣿⣟⣿⣿⣿⣿⣽⢿⣿⣿⣾⣷⣽⣿⣿⣿⣿⣿⣻⣿⣿⣿⡿⣿⣿⣿⣟⣿⣿⣿⣷⣿⣿⡿⎥
-⎢⣯⣿⣿⣿⣿⣽⣿⣟⣽⣾⢿⣿⣾⣿⢿⡿⣿⣿⣿⣿⣯⢿⣾⣿⣟⣿⣯⣹⡿⣿⣿⣿⣷⣻⣽⣺⣯⣷⣿⣿⎥
-⎢⢿⣿⣿⣿⢟⣿⣿⣿⣾⣿⣿⣿⣷⣿⣿⣟⣻⣿⣿⣿⢿⣿⣿⡿⣻⣿⢿⣿⣿⣿⣿⣿⣯⣿⣝⣿⣯⣟⣩⣯⎥
-⎢⣿⣿⣷⣿⣿⣾⣿⣷⣽⣿⣿⣷⣷⣾⣿⣾⣽⣿⣿⢼⡿⣿⣾⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⎥
-⎢⣿⣼⣿⣿⣟⣿⣧⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣻⣿⣟⣿⣯⣿⣿⡿⣿⣿⣯⣿⣿⣿⣿⣿⣽⣿⣿⢿⣷⎥
-⎢⣿⣽⣿⣿⣟⣽⣿⣻⣾⣿⣾⣻⣿⡿⣿⣿⣿⣶⣻⣿⣿⣯⣿⢿⣿⣿⣿⣿⣿⣿⣭⣿⣿⣻⣿⣿⡽⣛⣯⣷⎥
-⎢⣿⣷⣿⣿⢿⣛⣷⢿⡿⣿⢷⣿⣻⣿⣿⣿⣾⣿⣿⢽⣿⣷⣿⣿⣳⢻⣿⣿⣿⢿⣿⣿⣿⣿⣿⣛⢿⣿⣿⡷⎥
-⎢⣼⣷⣳⣯⣿⣽⢼⣣⡿⣭⣿⣿⣟⣿⣩⣿⣿⣿⡛⣿⣿⣾⣷⣾⣿⣷⣷⡻⣾⣿⣿⣯⣾⣿⣷⣻⣷⣿⣟⣿⎥
-⎢⣿⣿⣿⣿⣿⣿⣭⣿⣿⡿⣿⣿⣿⣽⣿⡿⣿⣿⣿⣿⣟⣿⢯⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⎥
-⎢⢽⣟⣿⣿⣿⡾⣷⣿⣷⣿⣿⣿⡿⣻⣿⣿⣿⣯⣿⣽⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⢯⣿⣻⣿⣾⡿⣿⢻⣧⎥
-⎢⣽⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢺⣿⡏⣿⣽⣯⣿⣿⣿⣷⣿⣿⣟⣿⣽⣿⣿⣿⣿⣿⣿⢿⣿⣾⣷⣿⣿⎥
-⎢⣻⣿⣿⣿⣾⣯⣾⣯⣿⣟⣿⣿⣿⣿⡿⣯⣟⢿⣿⣿⣿⣿⣿⣿⡻⣿⣟⣵⣿⣻⣿⣿⣿⣿⣿⣿⣿⣷⣿⣟⎥
-⎢⢿⣿⢿⣿⣿⣿⣿⣻⣿⣿⣷⣿⣿⣿⣟⣿⣿⢿⣿⣿⣿⢿⣿⣮⣿⣿⢿⣯⣿⣿⣽⣟⣻⣿⣽⣿⣿⢿⣻⣮⎥
-⎢⣿⣿⣿⣿⣾⢿⣿⣿⣿⡿⣼⣷⣭⣿⣿⣻⣿⣟⣿⣿⣿⣽⣿⣿⣿⡿⣿⣟⣻⣿⣽⣟⣿⣏⣷⣿⣞⣿⣟⢿⎥
-⎢⣿⣿⣿⣿⣿⣗⣿⢟⣿⣿⢿⢿⣟⣿⣿⣿⣿⣶⣿⣿⣿⣻⣿⢿⣿⣿⣿⣿⡿⣿⣟⣾⣾⣿⣿⢿⣿⣿⣿⣷⎥
-⎣⢪⣿⡿⡿⣿⣿⣿⢷⡾⡿⣷⣹⣧⡿⣽⢽⣿⣿⡿⢿⣿⢿⢯⢿⣿⣿⣿⣿⢿⣞⣿⢿⢷⣻⠾⣿⡿⢿⣿⣿⎦</pre>
+<pre>4096×4096 cuSPARSE.CuSparseMatrixCSR{Float64, Int32} with 20798 stored entries:
+⎡⣷⣯⣻⣿⣾⣏⣿⣿⣿⣶⣻⣛⣽⣶⡟⣿⣫⢿⣿⣿⣞⣶⣿⣿⣿⣾⣻⣿⣿⢮⣿⣿⣿⣿⣿⣿⣗⣿⡿⣻⎤
+⎢⢹⣿⣿⣿⣿⢿⣯⣿⡽⣿⡿⣯⣯⣟⣿⣿⣿⢿⣿⣴⡾⣿⣿⣿⣿⣿⣿⠿⣿⣿⣾⣿⣟⣯⣿⣻⣜⣿⣿⣷⎥
+⎢⣿⣿⣿⣿⣿⣿⣽⣿⡿⣾⣿⣿⣿⣿⣾⡿⣿⣿⣶⣯⣿⣽⡿⣿⣻⣻⡿⢿⣿⣾⣽⣧⣽⣿⣾⣿⣿⡿⣿⣿⎥
+⎢⣿⣿⣟⣿⣶⣿⣿⣿⣿⢻⣷⣿⡟⣯⣿⣿⣿⣷⣷⣷⣯⣿⣿⣿⣿⣿⣷⡿⣷⡽⣿⢛⣿⣿⣯⡿⣿⣹⣿⣯⎥
+⎢⣮⣻⣿⣯⣿⣿⣯⢻⣿⣿⣷⣿⣿⣽⣿⣿⣿⣿⣵⣟⣷⣾⣻⣟⣿⣛⣿⣿⣿⣟⡿⣿⣿⣿⣿⣿⣧⣽⣺⣿⎥
+⎢⢽⣿⣿⣾⣿⣿⣿⣿⣿⣿⢿⣿⣷⢿⣟⣿⣷⣿⣿⣿⣿⣻⣯⣿⣟⡿⣿⣯⣿⣿⣿⣾⣿⣿⣞⣽⣿⣿⣿⡿⎥
+⎢⣼⣿⡿⣟⣿⣯⢻⣿⣿⣷⡿⣿⣿⣿⣺⣿⣿⣿⣻⣿⣿⣿⣾⢿⣟⣿⣻⣿⣿⣷⣿⣿⣿⣯⣿⣿⣿⣾⣿⣿⎥
+⎢⡷⡿⣿⣿⣾⣿⣿⣿⣿⡽⣿⣟⣿⣾⣿⣿⣿⡵⣿⣿⣽⣿⣿⣿⣿⣻⣿⣼⣯⣿⣼⣿⣿⣿⣿⣯⣷⠿⣞⠇⎥
+⎢⣽⣿⣳⣶⣿⣿⣿⣿⣿⢿⣾⣯⣾⣿⡼⣿⣿⣾⣟⡿⣿⣿⣏⢿⡿⣾⢿⣿⣿⣿⣿⣿⡿⣿⣟⣿⣿⢿⣿⣏⎥
+⎢⣽⣾⣿⣿⣽⡻⣶⣿⣿⣿⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣯⢾⣿⣟⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣟⣷⣿⣯⎥
+⎢⣿⣏⣽⣿⡿⣿⡿⣿⣿⢿⣿⣿⢽⣟⣿⣿⣿⣿⢽⣿⣿⣷⢿⣯⣫⣿⣿⣿⡿⣿⣿⢻⣿⣻⣿⣽⣽⣿⣻⢟⎥
+⎢⣯⣿⣾⣟⣟⣿⣿⣿⣏⣿⣾⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⢷⣯⣿⢟⣿⣿⣻⣿⣿⣿⢿⢯⎥
+⎢⢿⣻⣿⣿⡿⣿⣾⣿⢿⢷⢿⣿⣿⣿⣿⣿⣿⣾⣿⣽⣿⣿⡿⣿⣿⣿⣏⡿⣞⣿⣿⡿⣟⣿⣿⣿⣽⣛⣷⢿⎥
+⎢⢿⣿⣿⣿⣿⣿⢷⣿⣿⡿⣿⣿⣾⣷⣿⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣽⠿⣟⣿⣿⣿⢻⣾⣿⎥
+⎢⣿⣿⣿⣻⣿⢾⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣟⣿⡿⣿⣽⢿⣿⣿⣿⢿⡿⢯⢿⣿⣫⣺⣿⣻⣣⎥
+⎢⣻⣿⡷⡯⣾⣷⣿⣟⣽⣿⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿⣟⣯⢿⣿⣯⣷⢿⣿⣽⣿⣿⣽⣿⣾⣿⡻⣿⣿⣽⡿⎥
+⎢⣾⣗⣿⣿⣻⣿⣽⡾⣵⢿⣽⡻⣿⣿⣿⢿⣿⢿⣿⣿⣿⣯⣿⣿⣿⣻⣽⣷⣧⣵⣿⢿⣻⣿⣿⣿⣿⣻⣿⡶⎥
+⎢⣿⣿⣽⣿⣿⣿⣿⠺⢿⣻⣿⣯⣿⣿⣿⡿⣿⡿⣟⣿⣿⣿⣽⣯⣟⣯⢿⣗⣻⣫⣿⣿⣿⣿⣿⣿⣾⣻⢾⣽⎥
+⎢⡹⣿⣿⣿⣿⣿⣷⣿⣿⣟⣷⣿⣿⣿⣿⣿⣯⣿⣷⣿⣻⣻⣷⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⎥
+⎣⢯⣿⣛⣷⣯⡿⡿⣻⣿⣿⡷⣿⣿⣿⡿⣿⢿⢿⢿⣽⢿⣿⣿⣿⢿⣾⠯⢿⣿⣷⢼⣶⣾⣿⣿⣿⣿⣿⣿⣷⎦</pre>
 </div>
 </div>
 </div>
@@ -9360,7 +9316,7 @@ to CUSPARSE, so the in-place form you already know works unchanged:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">u_in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CUDA</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="w"> </span><span class="mi">4096</span><span class="p">)</span>
@@ -9379,9 +9335,9 @@ to CUSPARSE, so the in-place form you already know works unchanged:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>650.0423258065038</pre>
+<pre>651.4104323060327</pre>
 </div>
 </div>
 </div>
@@ -9418,7 +9374,7 @@ know. A million uniform random numbers, generated on the device:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">r_gpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CUDA</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="kt">Float64</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span>
@@ -9432,29 +9388,29 @@ know. A million uniform random numbers, generated on the device:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>1000000-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
- 0.6239219810615138
- 0.8347113697509889
- 0.0953405968716377
- 0.17364372370474707
- 0.6662422529109115
- 0.2249561287886424
- 0.584114032030022
- 0.8640309308754623
- 0.23842867727942135
- 0.9361792024004785
+ 0.9867469156399651
+ 0.9599872603561677
+ 0.798389246599728
+ 0.29736306006965935
+ 0.7264618850191891
+ 0.993604398588835
+ 0.17179565180790518
+ 0.9841504690477176
+ 0.48209606599770066
+ 0.64994716046974
  ⋮
- 0.005149577231963687
- 0.5692482303526083
- 0.032182845259789705
- 0.5040019261219038
- 0.3223590692793193
- 0.8779367424867526
- 0.5891070641088965
- 0.2632415130520909
- 0.7157001111486858</pre>
+ 0.20824577729007315
+ 0.7133344294870403
+ 0.506937781269057
+ 0.08883092875613868
+ 0.5242117539022915
+ 0.4228399878752925
+ 0.4953145575222588
+ 0.48036091615625404
+ 0.5604508300595523</pre>
 </div>
 </div>
 </div>
@@ -9476,7 +9432,7 @@ one, and you get it by calling <code>sort</code>:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">s_gpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sort</span><span class="p">(</span><span class="n">r_gpu</span><span class="p">)</span>
@@ -9490,29 +9446,29 @@ one, and you get it by calling <code>sort</code>:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>1000000-element CUDACore.CuArray{Float64, 1, CUDACore.DeviceMemory}:
- 1.6695615512873907e-6
- 2.3692252129614566e-6
- 3.6751488787234443e-6
- 4.2982768584942654e-6
- 4.604085990622675e-6
- 5.095232544494177e-6
- 5.575223309850497e-6
- 1.08012051135975e-5
- 1.2098948124983355e-5
- 1.3134438559603279e-5
+ 2.8170808324956553e-7
+ 4.1885748275349854e-7
+ 1.9094513840633986e-6
+ 2.0971991704921145e-6
+ 2.8260188916218176e-6
+ 3.572706507914969e-6
+ 3.849673913369767e-6
+ 3.8951056716141075e-6
+ 7.125311125066869e-6
+ 7.230111392531047e-6
  ⋮
- 0.9999927559989528
- 0.9999935257832913
- 0.9999961740074974
- 0.9999966339151645
- 0.9999977399249682
- 0.999997938161713
- 0.9999987119321747
- 0.9999994863709203
- 0.9999997791143933</pre>
+ 0.9999908783014664
+ 0.9999911131974988
+ 0.9999930606952037
+ 0.9999932013571005
+ 0.9999939318330999
+ 0.9999947632961126
+ 0.9999949054788455
+ 0.9999989770398894
+ 0.9999993262933122</pre>
 </div>
 </div>
 </div>
@@ -9533,7 +9489,7 @@ one, and you get it by calling <code>sort</code>:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-julia"><pre><span></span><span class="n">findall</span><span class="p">(</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.99</span><span class="p">),</span><span class="w"> </span><span class="n">r_gpu</span><span class="p">)</span>
@@ -9547,29 +9503,29 @@ one, and you get it by calling <code>sort</code>:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>10075-element CUDACore.CuArray{Int64, 1, CUDACore.DeviceMemory}:
-     55
-     81
-    189
-    255
-    417
-    435
-    645
-    934
-   1024
-   1293
+<pre>9977-element CUDACore.CuArray{Int64, 1, CUDACore.DeviceMemory}:
+      6
+    338
+    352
+    658
+    716
+    778
+    781
+    788
+    793
+   1238
       ⋮
- 999397
- 999410
- 999445
- 999489
- 999511
- 999544
- 999572
- 999749
- 999815</pre>
+ 999149
+ 999612
+ 999689
+ 999713
+ 999727
+ 999811
+ 999882
+ 999938
+ 999988</pre>
 </div>
 </div>
 </div>
@@ -9586,6 +9542,50 @@ the dense factorizations (<code>lu</code>, <code>cholesky</code>, <code>qr</code
 everything is. <code>unique</code>, for one, falls back to slow element-at-a-time
 access. When in doubt, try your operation on a <code>CuArray</code> and watch for
 scalar-indexing complaints before relying on it in a hot loop.</p>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%E2%9C%8F%EF%B8%8F-Exercise:-Monte-Carlo-%CF%80">✏️ Exercise: Monte-Carlo π<a class="anchor-link" href="#%E2%9C%8F%EF%B8%8F-Exercise:-Monte-Carlo-%CF%80">¶</a></h3><blockquote>
+<p><strong>Your turn.</strong> Estimate π on the GPU: draw <code>N = 10^6</code> uniform points in
+the unit square with <code>CUDA.rand</code>, and use <code>mapreduce</code> to count how many
+land inside the quarter disk <code>x^2 + y^2 ≤ 1</code>. Four times that fraction
+estimates π. Write it as a single fused reduction, with no temporary
+array of distances or of booleans.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-julia"><pre><span></span><span class="c"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Solution:
+<a href="https://madsuite.org/ifac2026/notebooks/montecarlo-pi-solution.html">montecarlo-pi-solution</a>.</p>
 <hr/>
 <h2 id="Kernels-with-KernelAbstractions.jl">Kernels with KernelAbstractions.jl<a class="anchor-link" href="#Kernels-with-KernelAbstractions.jl">¶</a></h2><p>Broadcasting covers elementwise operations, but not everything is
 elementwise. A <em>stencil</em> is the classic exception: each output element
@@ -9846,7 +9846,7 @@ operation on every instance, which is the pattern GPUs are built for:</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(t_cpu = 2.126273753, t_gpu = 0.032805756, speedup = 64.81404522425882)</pre>
+<pre>(t_cpu = 2.134275244, t_gpu = 0.032262902, speedup = 66.15261218597136)</pre>
 </div>
 </div>
 </div>
