@@ -10,12 +10,12 @@ body {
   background: #fff;
 }
 
-h1 { font-size: 1.6rem; line-height: 1.25; }
-h2 { font-size: 1.15rem; margin-top: 2rem; }
+h1 { font-size: 1.6rem; line-height: 1.25; color: #a31f34; }
+h2 { font-size: 1.15rem; margin-top: 2rem; color: #a31f34; }
 
 li { margin: 0.4rem 0; }
 
-a { color: #0b5394; }
+a { color: #a31f34; }
 
 .meta, .muted-note { color: #555; }
 .muted-note { font-size: 0.9rem; }
