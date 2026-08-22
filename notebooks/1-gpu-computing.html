@@ -8129,7 +8129,7 @@ section, at 2048² × 8 = 34 MB. Running the whole notebook leaves about
 any time, so you can check before you allocate something big.</p>
 </blockquote>
 <p>Data moves between the two worlds by conversion. <code>CuArray(a)</code> takes an
-array that lives in CPU memory and <strong>uploads</strong> it to the device:</p>
+array that lives in CPU memory and <strong>copies</strong> it to the device:</p>
 </div>
 </div>
 </div>
@@ -8174,7 +8174,7 @@ array that lives in CPU memory and <strong>uploads</strong> it to the device:</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>and <code>Array(a)</code> <strong>downloads</strong> a GPU array back to the host:</p>
+<p>and <code>Array(a)</code> <strong>copies</strong> a GPU array back to the host:</p>
 </div>
 </div>
 </div>
