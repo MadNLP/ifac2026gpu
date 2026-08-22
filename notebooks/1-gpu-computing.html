@@ -9797,7 +9797,8 @@ the optimization problems in the next tutorial take.</p>
 $\omega = \dot{\theta}$:</p>
 <p>$$ \dot{\theta} = \omega, \qquad \dot{\omega} = -\frac{g}{L}\,\sin\theta - c\,\omega, $$</p>
 <p>with $g/L = 9.81$ and damping $c = 0.1$. The simplest way to simulate it is
-the <em>explicit Euler</em> method, stepping forward with time step $\Delta t$:</p>
+the <em>semi-implicit Euler</em> method, stepping forward with time step $\Delta t$
+(the angle update uses the freshly updated velocity):</p>
 <p>$$ \omega \leftarrow \omega - \Delta t\,(9.81\,\sin\theta + 0.1\,\omega), \qquad
    \theta \leftarrow \theta + \Delta t\,\omega. $$</p>
 <p>The code below does this for the <em>whole batch at once</em>. The state is stored
